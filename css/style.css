@@ -5,48 +5,57 @@
 :root{
 /*--------------------Colors--------------------*/
 /*Primary*/
---green: hsl(163, 72%, 41%);
---red: hsl(356, 69%, 56%);
+    --green: hsl(163, 72%, 41%);
+    --red: hsl(356, 69%, 56%);
 
---twitter: hsl(195, 100%, 50%);
---facebook: hsl(203, 89%, 53%);
---instagram1: hsl(37, 97%, 70%);
---instagram2: hsl(329, 70%, 58%);
---youTube: hsl(348, 97%, 39%);
+    --twitter: hsl(195, 100%, 50%);
+    --facebook: hsl(203, 89%, 53%);
+    --instagram1: hsl(37, 97%, 70%);
+    --instagram2: hsl(329, 70%, 58%);
+    --youTube: hsl(348, 97%, 39%);
 
+    --main-bg: hsl(0, 0%, 97%);
+    --secondary-bg: hsl(225, 100%, 98%);
+    --card-bg: hsl(227, 47%, 96%);
+    --card-bg-hover: hsl(225, 30%, 92%);
+    --toggle:hsl(228, 9%, 58%);
+    --toggle-before:hsl(225, 100%, 98%);
+    --main-text: hsl(230, 17%, 14%);
+    --secondary-text: hsl(228, 12%, 44%);
+    --third-text: hsl(228, 12%, 44%);
 /* ----------Light Theme ------------*/
 /*BG*/
---white: hsl(0, 0%, 96%);
-/*Top BG Pattern*/
---pale-blue: hsl(225, 100%, 98%);
+/* --white: hsl(0, 0%, 90%);
+/*Header BG Pattern*/
+/* --pale-blue: hsl(225, 100%, 98%); */
 /*Card BG*/
---light-grayish: hsl(227, 47%, 96%);
+/* --light-grayish: hsl(227, 47%, 96%); */
 
 /*---------- Dark Theme ---------------*/
 /*BG*/
---very-dark-bg: hsl(230, 17%, 14%);
+/* --very-dark-bg: hsl(230, 17%, 14%);
 --dark-blue-bg: hsl(232, 19%, 15%);
 --dark-card: hsl(228, 28%, 20%);
---desaturated-blue: hsl(228, 34%, 66%);
+--desaturated-blue: hsl(228, 28%, 25%);
 --toggle-dark1: hsl(210, 78%, 56%); 
---toggle-dark2: hsl(146, 68%, 55%);
+--toggle-dark2: hsl(146, 68%, 55%); */
 
 
 /*Text*/
---dark-grayish: hsl(228, 12%, 44%);
+/* --dark-grayish: hsl(228, 12%, 44%);
 --very-dark: hsl(230, 17%, 14%);
---toggle: hsl(228, 9%, 58%);
+--toggle: hsl(228, 9%, 58%); */
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--white);
-    color: var(--very-dark);
+    background: var(--main-bg);
+    color: var(--main-text);
 }
 
 .header{
-    background: var(--pale-blue);
+    background: var(--secondary-bg);
     padding-bottom: 100px;
     border-radius: 0 0 16px 16px;
     padding-top: 2em;
@@ -61,8 +70,8 @@ header h1 {
     margin: .5em 0;
     font-weight: 600;
     font-size: .9em;
-    color: var(--dark-grayish);
-    border-bottom: 1px solid var(--toggle);
+    color: var(--third-text);
+    border-bottom: 1px solid var(--secondary-text);
     padding-bottom: 1.5em;
 }
 
@@ -93,7 +102,7 @@ header h1 {
     height: 35px;
     display: block;
     border-radius: 20px;
-    background: var(--white);
+    background: var(--toggle);
     width: 70px;
     padding: 5px;
     box-sizing: border-box;
@@ -105,7 +114,7 @@ header h1 {
     display: block;
     width: 26px;
     height: 26px;
-    background: var(--very-dark);
+    background: var(--toggle-before);
     border-radius: 50%;
     transform: translateX(34px);
     transition: ease .3s;
@@ -121,7 +130,7 @@ header h1 {
 .card{
     border-radius: 8px;
     overflow: hidden;
-    background: var(--light-grayish);
+    background: var(--card-bg);
     text-align: center;
     padding: 1.5em 0;
     position: relative;
@@ -136,7 +145,10 @@ header h1 {
     right: 0;
     top: 0;
 }
-
+.card:hover{
+    background: var(--card-bg-hover);
+    cursor: pointer;         
+}
 .card.facebook::before{
     background: var(--facebook);
 }
@@ -155,7 +167,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--toggle);
+    color: var(--secondary-text);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: -.05em;
@@ -172,7 +184,7 @@ header h1 {
 .card-followers-number{
     font-size: 50px;
     font-weight: 700;
-    color: var(--very-dark);
+    color: var(--main-text);
 }
 
 .card-followers-title{
@@ -180,7 +192,7 @@ header h1 {
     font-size: .75em;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: var(--toggle);
+    color: var(--secondary-text);
 }
 
 .card-today{
@@ -204,7 +216,7 @@ header h1 {
 }
 
 h2{
-    color: var(--dark-grayish);
+    color: var(--third-text);
 }
 
 .card-small{
@@ -212,17 +224,20 @@ h2{
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1em;
     border-radius: 8px;
-    background: var(--light-grayish);
+    background: var(--card-bg);
     padding: 1.7em;
     /* margin-top: 1em; */
 }
-
+.card-small:hover{
+    background: var(--card-bg-hover);
+    cursor: pointer;         
+}
 .card-small p{
     margin: 0;
 }
 
 .card-small-views{
-    color: var(--dark-grayish);
+    color: var(--third-text);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: -.05em;
@@ -234,7 +249,7 @@ h2{
     font-weight: 700;
     font-size: 2em;
     line-height: .9;
-    color: var(--very-dark);
+    color: var(--main-text);
 }
 .card-small-percent{
     text-align: right;
@@ -290,32 +305,73 @@ h2{
     }
 }
 
+.is-dark-mode{
+    --main-bg: hsl(230, 17%, 14%);
+    --secondary-bg: hsl(232, 19%, 15%);
+    --card-bg: hsl(228, 28%, 20%);
+    --card-bg-hover: hsl(228, 28%, 25%);
+    --toggle: linear-gradient(to right, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+    --toggle-before:hsl(230, 17%, 14%);
+    --main-text: hsl(227, 47%, 96%);
+    --secondary-text: hsl(228, 9%, 58%);
+    --third-text: hsl(228, 12%, 44%);
+}
+
+.is-light-mode{
+    --main-bg: hsl(0, 0%, 97%);
+    --secondary-bg: hsl(225, 100%, 98%);
+    --card-bg: hsl(227, 47%, 96%);
+    --card-bg-hover: hsl(225, 30%, 92%);
+    --toggle:hsl(228, 9%, 58%);
+    --toggle-before:hsl(225, 100%, 98%);
+    --main-text: hsl(230, 17%, 14%);
+    --secondary-text: hsl(228, 12%, 44%);
+    --third-text: hsl(228, 12%, 44%);
+}
 /*-------------------DARK MODE--------------------*/
 
 @media(prefers-color-scheme:dark){
-    body{
-        background: var(--very-dark-bg);
-        color: var(--white);
+    :root{
+        --main-bg: hsl(230, 17%, 14%);
+        --secondary-bg: hsl(232, 19%, 15%);
+        --card-bg: hsl(228, 28%, 20%);
+        --card-bg-hover: hsl(228, 28%, 25%);
+        --toggle: linear-gradient(to right, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+        --toggle-before:hsl(230, 17%, 14%);
+        --main-text: hsl(227, 47%, 96%);
+        --secondary-text: hsl(228, 9%, 58%);
+        --third-text: hsl(228, 12%, 44%);
+    }
+    /* body{
+        background: var(--main-bg);
+        color: var(--main-text);
     }
     .header{
-        background: var(--very-dark-bg);
+        background: var(--secondary-bg);
     }
     .card-followers-title{
-        color: var(--toggle);
+        color: var(--secondary-text);
     }
     .card-title{
-        color: var(--dark-grayish);
+        color: var(--third-text);
     }
     .card{
         background: var(--dark-card);
     }
+    .card:hover{
+        background: var(--desaturated-blue);
+        cursor: pointer;
+    }
     .card-followers-number,
-    .card-today,
     .card-small-number{
         color: var(--light-grayish);
     }
     .card-small{
         background: var(--dark-card);
+    }
+    .card-small:hover{
+        background: var(--desaturated-blue);
+        cursor: pointer;
     }
     .card-small-views{
         color: var(--toggle);
@@ -325,5 +381,5 @@ h2{
     }
     .switch::before{
         background: var(--very-dark);
-    }
+    } */
 }
