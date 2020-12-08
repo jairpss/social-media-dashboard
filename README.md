@@ -1,6 +1,6 @@
 # Frontend Mentor - Social media dashboard with theme switcher
 
-# See the live demo here -> https://jairpss.github.io/social-media-dashboard/
+See the live demo here -> https://jairpss.github.io/social-media-dashboard/
 
 ![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)
 
